@@ -1,0 +1,24 @@
+// Media Query Manager Desktop-first
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == bp-largest {
+    @media screen and (max-width: 75em) {
+      @content;
+    }
+  } @else if $breakpoint == bp-large {
+    // 62.5em = 1000px
+    @media screen and (max-width: 62.5em) {
+      @content;
+    }
+  } @else if $breakpoint == bp-tablet {
+    // 56.25em = 900px
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  } @else if $breakpoint == bp-small {
+    // 37.5em = 600px
+    @media screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+}

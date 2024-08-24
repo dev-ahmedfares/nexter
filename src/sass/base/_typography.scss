@@ -1,0 +1,45 @@
+body {
+  font-weight: 300;
+  line-height: 1.6;
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+}
+
+%font {
+  font-family: $font-display;
+  font-weight: 400;
+}
+.heading {
+  &__1 {
+    @extend %font;
+    font-size: 4.5rem;
+    color: $color-grey-light-1;
+    line-height: 1;
+  }
+
+  &__2 {
+    @extend %font;
+    font-size: 4rem;
+    line-height: 1;
+    font-style: italic;
+  }
+  &__3 {
+    @extend %font;
+    font-size: 1.6rem;
+    color: $color-primary;
+    text-transform: uppercase;
+  }
+  &__4 {
+    @extend %font;
+    font-size: 1.9rem;
+
+    &__light {
+    }
+    &__dark {
+      color: $color-grey-dark-1;
+    }
+  }
+  &__5 {
+    @extend %font;
+  }
+}

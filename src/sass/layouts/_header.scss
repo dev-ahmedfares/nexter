@@ -1,0 +1,127 @@
+.header {
+  grid-column: full-start / col-end 6;
+
+  background-image: linear-gradient(
+      rgba(16, 29, 44, 0.93),
+      rgba(16, 29, 44, 0.93)
+    ),
+    url(../assets/hero.jpeg);
+
+  background-position: center;
+  background-size: cover;
+
+  display: grid;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-row-gap: 2rem;
+  justify-content: center;
+  padding: 8rem {
+    top: 4rem;
+  }
+
+  @include responsive(bp-tablet) {
+    grid-column: 1/-1;
+    padding: 5rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    color: #aaa;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+
+    align-items: center;
+    grid-column-gap: 2rem;
+    &::before,
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #aaa;
+    }
+  }
+
+  &__logo {
+    height: 3rem;
+    justify-self: center;
+  }
+
+  &__brands {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 3rem;
+    &__icon {
+      max-height: 2.5rem;
+      max-width: 100%;
+      filter: brightness(70%);
+    }
+  }
+
+  .btn {
+    justify-self: start;
+    align-self: flex-start;
+  }
+}
+
+.realtors {
+  background-color: $color-secondary;
+  grid-column: col-start 7 / full-end;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-row-gap: 1rem;
+  padding: 8rem {
+    top: 4rem;
+  }
+
+  @include responsive(bp-tablet) {
+    grid-column: 1/-1;
+    padding: 4rem;
+  }
+
+  .heading__3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .heading__4 {
+    color: $color-grey-light-1;
+  }
+  &__houses {
+    display: grid;
+    gap: 4rem;
+    justify-content: center;
+
+    @include responsive(bp-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include responsive(bp-small) {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__holder {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      display: block;
+    }
+    .name {
+      width: max-content;
+    }
+    span {
+      color: #aaa;
+      text-transform: uppercase;
+      margin-top: -3px;
+    }
+  }
+}
